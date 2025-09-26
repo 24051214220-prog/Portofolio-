@@ -1,0 +1,344 @@
+/* === 1. PENGATURAN GLOBAL & VARIABLE WARNA === */
+:root {
+    --bg-color: #f8fafc; /* Warna latar belakang utama (putih kebiruan) */
+    --bg-secondary: #e2e8f0; /* Warna latar belakang sekunder (abu-abu muda) */
+    --primary-text: #0f172a; /* Warna teks utama (hitam kebiruan) */
+    --secondary-text: #475569; /* Warna teks abu-abu (digelapkan sedikit) */
+    --accent-color: #3b82f6; /* Warna aksen/tombol (biru cerah) */
+    --accent-hover: #2563eb; /* Warna aksen saat di-hover */
+    --card-bg: #ffffff; /* Warna latar belakang kartu/elemen */
+    --nav-bg: #1e293b; /* Warna latar belakang navigasi (biru tua) */
+    --nav-text: #e2e8f0; /* Warna teks navigasi */
+    --border-color: #cbd5e1; /* Warna border */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+    
+    /* TAMBAHKAN 3 BARIS INI */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === 2. NAVIGASI === */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.nav {
+    padding: 15px 0;
+}
+
+.nav-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left a {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-left a, .nav-right a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: var(--accent-color);
+}
+
+/* Gaya untuk link navigasi yang aktif */
+.nav-right a.active-page {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* === 3. LAYOUT UTAMA & SECTION === */
+.body-container {
+    padding-top: 70px; /* Nilai sebelumnya 20px, 70px lebih pas */
+    
+    /* TAMBAHKAN 1 BARIS INI */
+    flex-grow: 1; /* Membuat konten utama mengisi ruang kosong */
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-text);
+}
+
+/* === 4. HOME SECTION (HERO) === */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 0; /* Mengganti min-height agar lebih konsisten */
+    width: 90%;
+    max-width: 1200px; /* Lebarkan hero section */
+    margin: 0 auto;
+}
+/* ... sisa style untuk .home ... */
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--card-bg);
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.main-intro {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+/* === 5. ABOUT SECTION (di halaman about.html) === */
+.container-about-full {
+    background-color: var(--bg-secondary);
+    width: 100%;
+}
+
+.container-about-full .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+}
+
+/* === 6. PROJECTS SECTION === */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.project-item p {
+    color: var(--secondary-text);
+}
+
+/* === 7. CONTACT FORM SECTION === */
+.contact form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact button {
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+}
+
+/* === 8. FOOTER === */
+.footer {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 80px;
+}
+
+/* === 9. SUMMARY SECTION (di halaman index.html) === */
+.summary-section {
+    background-color: var(--bg-secondary);
+    padding: 1px 0; /* Trik untuk memastikan margin container tidak tumpah */
+}
+
+.summary-about {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.summary-about p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+}
+
+.summary-projects {
+    text-align: center;
+}
+
+.summary-projects .project-list {
+    margin-bottom: 40px;
+}
+
+/* Tombol sekunder (untuk link 'Baca Selengkapnya') */
+.btn-secondary {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-secondary:hover {
+    color: var(--accent-hover);
+}
+
+/* Tombol kontak di navigasi */
+.btn-nav {
+    background-color: var(--accent-color);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--accent-hover) !important; /* Pakai !important untuk menimpa hover standar */
+    color: var(--nav-text) !important;
+}
+
+/* Menambahkan penanda aktif di halaman utama */
+.nav-left a.active-page {
+    color: var(--accent-color);
+}
+
+/* === 10. GALLERY SECTION (di halaman about.html) === */
+.gallery-grid {
+    display: grid;
+    /* Membuat grid responsif: 1 kolom di HP, 2-3 di tablet/desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden; /* Penting untuk efek zoom */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi ruang tanpa distorsi */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Efek zoom saat di-hover */
+}
