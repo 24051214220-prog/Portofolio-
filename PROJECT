@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyek Saya — Reza Mortasefi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="nav-container">
+    <nav class="nav">
+      <div class="nav-content">
+        <div class="nav-left">
+          <a href="index.html">Reza Mortasefi.</a>
+        </div>
+        <div class="nav-right">
+          <a href="about.html">About</a>
+          <a href="project.html" class="active-page">Projects</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="body-container">
+    <section class="container projects" id="Projects">
+      <h2>Proyek Saya</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Winner MbakMas Fakultas Teknik Universitas Negeri Surabaya 2024</h3>
+          <p>Ajang pemilihan duta Fakultas Teknik Universitas Negeri Surabaya yang menekankan pada wawasan akademik, kepribadian, keterampilan komunikasi, serta peran aktif mahasiswa dalam menjadi teladan dan inspirasi bagi sivitas akademika</p>
+        </div>
+        <div class="project-item">
+          <h3>First Runner up Puteri Ekowisata Jawa Timur</h3>
+          <p>Juara 2 ajang Puteri Ekowisata Jawa Timur dengan fokus pada pelestarian lingkungan dan promosi pariwisata berkelanjutan.</p>
+        </div>
+        <div class="project-item">
+          <h3>Duta Kepemudaan Indonesia</h3>
+          <p>Perwakilan pemuda Indonesia dengan peran aktif dalam kepemimpinan, kolaborasi, dan pemberdayaan generasi muda.</p>
+        </div>
+         <div class="project-item">
+          <h3>Sales Promotion Girl Product Make up OMG</h3>
+          <p>Menjual produk dan meningkatkan Selling.</p>
+        </div>
+         <div class="project-item">
+          <h3>Sales Promotion Girl Skincare Product Artist Inc</h3>
+          <p>Menjual produk dan meningkatkan Selling.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; Reza Mortasefi. Dibuat dengan ❤️</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
